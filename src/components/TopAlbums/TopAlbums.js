@@ -11,6 +11,7 @@ class TopAlbums extends Component {
         }
     }
 
+//Fetching data
     componentDidMount() {
         fetch('https://itunes.apple.com/us/rss/topalbums/limit=100/json')
             .then(response => response.json())
@@ -18,23 +19,25 @@ class TopAlbums extends Component {
 
     }
 
+//Handling input value on change
     handleChange = (event) => {
         this.setState({search: event.target.value})
     };
 
     render() {
-        const albums = this.state.data.map((element,index)=> {
+        //Adding position of the album to fetched data
+        const albums = this.state.data.map((element, index) => {
             const i = Object.assign({}, element);
-            i.position = index+1;
+            i.position = index + 1;
             return i;
         });
+        //Creating a new array based on the searched keywords
         const filteredAlbums = albums.filter(
             (album) => {
                 return album['im:name'].label.toLowerCase().includes(this.state.search.toLocaleLowerCase()) || album['im:artist'].label.toLowerCase().includes(this.state.search.toLocaleLowerCase())
             }
         );
         console.log(this.state.data);
-        console.log(albums);
 
         return (
             <main className={'topAlbums'}>

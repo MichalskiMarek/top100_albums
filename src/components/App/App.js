@@ -15,8 +15,8 @@ class App extends Component {
             {item: 'Contact', link: '/contact'},
         ];
 
-        const comingSoonItems = navItems.map((element,index)=>{
-            return index>=1 ? <Route path={element.link} component={ComingSoon} key={element.item}/> : null
+        const comingSoonItems = navItems.map((element, index) => {
+            return index >= 1 ? <Route path={element.link} component={ComingSoon} key={element.item}/> : null
         });
         return (
             <BrowserRouter>

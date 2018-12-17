@@ -9,7 +9,6 @@ class App extends Component {
     render() {
         //Array with navigation elements
         const navItems = [
-            {item: 'Top 100 albums', link: '/top100'},
             {item: 'News', link: '/news'},
             {item: 'Photos', link: '/photos'},
             {item: 'Video', link: '/video'},
@@ -17,7 +16,7 @@ class App extends Component {
         ];
         //Adding route path to ComingSoon element to future tabs
         const comingSoonItems = navItems.map((element, index) => {
-            return index >= 1 ? <Route path={element.link} component={ComingSoon} key={element.item}/> : null
+            return <Route path={element.link} component={ComingSoon} key={element.item}/>
         });
         return (
             <BrowserRouter>

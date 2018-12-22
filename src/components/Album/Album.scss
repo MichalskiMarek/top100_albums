@@ -28,7 +28,6 @@
     .albumArtist {
       color: #1E90FF;
     }
-
   }
 
   .panel-header {
@@ -72,6 +71,7 @@
   .panel-collapse {
     overflow: hidden;
     transition: height 0.3s ease-out;
+
     .panel-mainInfo {
       display: flex;
       flex-direction: row;
@@ -102,14 +102,15 @@
       }
     }
     .panel-links {
+      visibility: hidden;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-around;
       height: 80px;
       border-top: #f0f1f5 solid 1px;
-      .panel-link {
 
+      .panel-link {
         a {
           text-decoration: none;
           color: #000000;
@@ -119,9 +120,10 @@
             color: #1E90FF;
           }
         }
-
+      }
+      &.is-expanded {
+        visibility: visible;
       }
     }
   }
-
 }

@@ -1,27 +1,30 @@
+@import "../App/App";
+
 .navBar {
   display: flex;
   flex-direction: row;
   align-items: center;
   height: 55px;
   width: 100%;
-  background-color: black;
+  background-color: $navBgColor;
   position: fixed;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.5);
 
-  .navButton {
+  .navBar__btn {
     padding: 30px;
     text-decoration: none;
     text-transform: uppercase;
-    color: #ffffff;
+    color: $navFontColor;
     &:hover {
       cursor: pointer;
-      color: #1E90FF;
+      color: $secondaryColor;
     }
   }
-  .logo {
+  .navBar__logo {
     min-width: 100px;
     display: flex;
     flex-direction: column;
-    color: #ffffff;
+    color: $navFontColor;
     padding: 20px;
     text-decoration: none;
     text-transform: uppercase;
@@ -29,7 +32,7 @@
     font-weight: 900;
     margin-left: 50px;
     line-height: 0.8;
-    .logo-top100{
+    .logo__top100{
       font-size: 18px;
       letter-spacing: 5px;
     }

@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+html{
+  height: 100%;
+}
+
+body{
+  height: 100%;
+}
 
 $fontFamily: 'Montserrat', sans-serif;
 @mixin bgGradient {
